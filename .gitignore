@@ -20,4 +20,5 @@
 # Temporary files
 *.tmp
 *.bak
-*.log
+*.log.env
+.envrc
