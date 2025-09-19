@@ -1,8 +1,8 @@
 class Voxcompose < Formula
   desc "Markdown refiner for speech transcripts (CLI)"
   homepage "https://github.com/cliffmin/voxcompose"
-  url "https://github.com/cliffmin/voxcompose/releases/download/v0.4.0-rc.4/voxcompose-cli-0.1.0-all.jar"
-  sha256 "1cb36998635957fef7c21a8ff343c817ab275d5b9c5107a30a14ce65d030ee55"
+  url "https://github.com/cliffmin/voxcompose/releases/download/v0.4.0/voxcompose-cli-0.1.0-all.jar"
+  sha256 "6e6f9261bb8df46a4898d432f7786ec50b6f39d48997fa48c58cea93e905e445"
   license "MIT"
 
   depends_on "openjdk@21"
