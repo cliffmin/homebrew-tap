@@ -8,10 +8,10 @@ class Voxcompose < Formula
   depends_on "openjdk@21"
 
   def install
-    libexec.install "voxcompose-0.1.0-all.jar"
+    libexec.install "voxcompose-cli-0.1.0-all.jar"
     (bin/"voxcompose").write <<~EOS
       #!/usr/bin/env bash
-      exec "#{Formula["openjdk@21"].opt_bin}/java" -jar "#{libexec}/voxcompose-0.1.0-all.jar" "$@"
+      exec "#{Formula["openjdk@21"].opt_bin}/java" -jar "#{libexec}/voxcompose-cli-0.1.0-all.jar" "$@"
     EOS
     chmod 0555, (bin/"voxcompose")
   end
