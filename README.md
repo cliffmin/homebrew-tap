@@ -8,6 +8,29 @@ brew tap cliffmin/tap
 
 ## Available Formulae
 
+### VoxCore
+
+Offline push-to-talk dictation for macOS with on-device transcription.
+
+```bash
+brew install voxcore
+```
+
+**Features:**
+- 🏠 100% offline transcription with Whisper
+- ⚡ Sub-second response for short recordings
+- ⌨️ System-wide hotkey integration
+- 🧹 Automatic disfluency removal
+- 🔧 Optional daemon with audio padding and WebSocket API
+
+**Post-install:**
+```bash
+voxcore-install                  # Setup Hammerspoon integration
+brew services start voxcore      # Start background daemon (optional)
+```
+
+**Repository:** https://github.com/cliffmin/voxcore
+
 ### VoxCompose
 
 Smart transcript refinement with self-learning corrections and local LLM processing.
@@ -29,6 +52,7 @@ brew install voxcompose
 For more information about specific formulae, use:
 
 ```bash
+brew info voxcore
 brew info voxcompose
 ```
 
