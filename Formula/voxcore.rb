@@ -6,6 +6,11 @@ class Voxcore < Formula
   license "MIT"
   head "https://github.com/cliffmin/voxcore.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   depends_on "ffmpeg"
   depends_on "openjdk@17"
   depends_on "whisper-cpp" => :recommended

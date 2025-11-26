@@ -5,6 +5,11 @@ class Voxcompose < Formula
   sha256 "eb6c3c3152d9a286a69e20ae6ebac6d801095538ec12199e6ee5b96eb736655a"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   depends_on "openjdk@21"
 
   def install

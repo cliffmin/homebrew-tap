@@ -43,7 +43,7 @@ brew install voxcompose
 - 🧠 Self-learning corrections (92% faster, 75% fewer errors)
 - ⚡ Smart processing with duration-based thresholds
 - 🔒 100% local processing with Ollama
-- 🍎 Integrates with [macos-ptt-dictation](https://github.com/cliffmin/macos-ptt-dictation)
+- 🍎 Integrates with [VoxCore](https://github.com/cliffmin/voxcore)
 
 **Repository:** https://github.com/cliffmin/voxcompose
 
