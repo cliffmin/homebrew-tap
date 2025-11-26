@@ -21,6 +21,21 @@ class Voxcompose < Formula
     chmod 0555, (bin/"voxcompose")
   end
 
+  def caveats
+    <<~EOS
+      VoxCompose requires Ollama for LLM refinement:
+
+        brew install ollama
+        ollama serve &
+        ollama pull llama3.1
+
+      Test: echo "pushto github" | voxcompose
+
+      For VoxCore integration, edit ~/.hammerspoon/ptt_config.lua:
+        LLM_REFINER = { ENABLED = true, CMD = { "#{opt_bin}/voxcompose" }, ... }
+    EOS
+  end
+
   test do
     output = shell_output("#{bin}/voxcompose --version 2>&1")
     assert_match "0.4.4", output
