@@ -76,6 +76,27 @@ If you encounter issues:
    brew audit --strict voxcompose
    ```
 
+## Upgrading
+
+Update to the latest versions:
+
+```bash
+brew update
+brew upgrade voxcore voxcompose
+```
+
+Check available versions:
+```bash
+brew info voxcore
+brew info voxcompose
+```
+
+After upgrading VoxCore, reload Hammerspoon integration:
+```bash
+voxcore-install
+# Then reload Hammerspoon: ⌘+⌥+⌃+R
+```
+
 ## Contributing
 
 To report issues or contribute, please visit the main project repository:
