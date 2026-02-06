@@ -39,7 +39,7 @@ class Voxcore < Formula
       mkdir -p "$HOME/.hammerspoon"
 
       # Symlink Lua files
-      for lua_file in push_to_talk.lua whisper_wrapper.lua; do
+      for lua_file in push_to_talk_v2.lua whisper_wrapper.lua; do
         if [ -f "$REPO/hammerspoon/$lua_file" ]; then
           ln -sf "$REPO/hammerspoon/$lua_file" "$HOME/.hammerspoon/$lua_file"
         fi
@@ -121,7 +121,7 @@ class Voxcore < Formula
   end
 
   test do
-    assert_path_exists libexec/"hammerspoon/push_to_talk.lua"
+    assert_path_exists libexec/"hammerspoon/push_to_talk_v2.lua"
     assert_path_exists libexec/"whisper-post-processor/build/libs/whisper-post.jar"
     system bin/"whisper-post", "--version"
   end
