@@ -1,4 +1,6 @@
-# Clifford Min's Homebrew Tap
+# Homebrew Tap
+
+Homebrew formulae for the VoxCore ecosystem -- local voice-to-text on macOS.
 
 ## Installation
 
@@ -6,101 +8,64 @@
 brew tap cliffmin/tap
 ```
 
-## Available Formulae
+## Formulae
 
 ### VoxCore
 
-Offline push-to-talk dictation for macOS with on-device transcription.
+Offline push-to-talk transcription for macOS. One hotkey, any app, sub-second, 100% on-device.
 
 ```bash
+brew install --cask hammerspoon
 brew install voxcore
+voxcore-install
 ```
 
-**Features:**
-- 🏠 100% offline transcription with Whisper
-- ⚡ Sub-second response for short recordings
-- ⌨️ System-wide hotkey integration
-- 🧹 Automatic disfluency removal
-- 🔧 Optional daemon with audio padding and WebSocket API
-
-**Post-install:**
-```bash
-voxcore-install                  # Setup Hammerspoon integration
-brew services start voxcore      # Start background daemon (optional)
-```
+After install, reload Hammerspoon (Cmd+Opt+Ctrl+R) and grant Microphone + Accessibility permissions.
 
 **Repository:** https://github.com/cliffmin/voxcore
 
-### VoxCompose
+### VoxCompose (optional)
 
-Smart transcript refinement with self-learning corrections and local LLM processing.
+Self-learning transcript refinement plugin for VoxCore. Fixes concatenations, capitalizes technical terms, and optionally applies local LLM polish.
 
 ```bash
-brew install voxcompose
+brew install voxcompose ollama
+ollama serve &
+ollama pull llama3.1
 ```
 
-**Features:**
-- 🧠 Self-learning corrections (92% faster, 75% fewer errors)
-- ⚡ Smart processing with duration-based thresholds
-- 🔒 100% local processing with Ollama
-- 🍎 Integrates with [VoxCore](https://github.com/cliffmin/voxcore)
+Then enable in `~/.hammerspoon/ptt_config.lua`:
+```lua
+LLM_REFINER = { ENABLED = true, CMD = { "voxcompose", "--duration" } }
+```
 
 **Repository:** https://github.com/cliffmin/voxcompose
 
-## Documentation
-
-For more information about specific formulae, use:
-
-```bash
-brew info voxcore
-brew info voxcompose
-```
-
-## Troubleshooting
-
-If you encounter issues:
-
-1. **Update the tap:**
-   ```bash
-   brew update
-   ```
-
-2. **Reinstall the tap:**
-   ```bash
-   brew untap cliffmin/tap
-   brew tap cliffmin/tap
-   ```
-
-3. **Check formula integrity:**
-   ```bash
-   brew audit --strict voxcompose
-   ```
-
 ## Upgrading
-
-Update to the latest versions:
 
 ```bash
 brew update
 brew upgrade voxcore voxcompose
+voxcore-install  # Re-links Hammerspoon integration
+# Reload Hammerspoon: Cmd+Opt+Ctrl+R
 ```
 
-Check available versions:
+## Ecosystem
+
+| Component | Purpose | Repository |
+|-----------|---------|------------|
+| **VoxCore** | Core transcription engine | [cliffmin/voxcore](https://github.com/cliffmin/voxcore) |
+| **VoxCompose** | ML transcript refinement (optional) | [cliffmin/voxcompose](https://github.com/cliffmin/voxcompose) |
+| **homebrew-tap** | Distribution via Homebrew | This repo |
+
+## Troubleshooting
+
 ```bash
-brew info voxcore
-brew info voxcompose
+brew update                        # Refresh tap
+brew info voxcore                  # Check installed version
+brew reinstall voxcore             # Clean reinstall
+brew audit --strict voxcore        # Check formula integrity
 ```
-
-After upgrading VoxCore, reload Hammerspoon integration:
-```bash
-voxcore-install
-# Then reload Hammerspoon: ⌘+⌥+⌃+R
-```
-
-## Contributing
-
-To report issues or contribute, please visit the main project repository:
-- VoxCompose: https://github.com/cliffmin/voxcompose/issues
 
 ## License
 
