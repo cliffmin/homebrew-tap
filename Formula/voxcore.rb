@@ -1,8 +1,8 @@
 class Voxcore < Formula
   desc "Offline push-to-talk dictation for macOS with on-device transcription"
   homepage "https://github.com/cliffmin/voxcore"
-  url "https://github.com/cliffmin/voxcore/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "0d0590d4a87f29b16a37bcef6446e9b39f4135fad7aec2c23887c9e5900ef737"
+  url "https://github.com/cliffmin/voxcore/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "aaca860b5c3862ceade43f1b07a921761f88aa854d5ae9f75804c1f24d0ff6f8"
   license "MIT"
   head "https://github.com/cliffmin/voxcore.git", branch: "main"
 
