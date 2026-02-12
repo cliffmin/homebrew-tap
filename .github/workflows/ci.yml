@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    name: Formula Audit
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Tap this repository
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/cliffmin"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/cliffmin/homebrew-tap"
+
+      - name: Audit voxcore formula
+        run: brew audit --strict Formula/voxcore.rb
+
+      - name: Audit voxcompose formula
+        run: brew audit --strict Formula/voxcompose.rb
+
+      - name: Check formula style
+        run: |
+          brew style Formula/voxcore.rb || true
+          brew style Formula/voxcompose.rb || true
