@@ -15,18 +15,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Tap this repository
+      - name: Tap from workspace
         run: |
-          mkdir -p "$(brew --repository)/Library/Taps/cliffmin"
-          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/cliffmin/homebrew-tap"
+          brew tap cliffmin/tap "$GITHUB_WORKSPACE"
 
-      - name: Audit voxcore formula
-        run: brew audit --strict Formula/voxcore.rb
-
-      - name: Audit voxcompose formula
-        run: brew audit --strict Formula/voxcompose.rb
+      - name: Audit formulae
+        run: |
+          brew audit --strict cliffmin/tap/voxcore
+          brew audit --strict cliffmin/tap/voxcompose
 
       - name: Check formula style
         run: |
-          brew style Formula/voxcore.rb || true
-          brew style Formula/voxcompose.rb || true
+          brew style cliffmin/tap/voxcore || true
+          brew style cliffmin/tap/voxcompose || true
