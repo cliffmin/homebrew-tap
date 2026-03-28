@@ -52,11 +52,11 @@ voxcore-install  # Re-links Hammerspoon integration
 
 ## Ecosystem
 
-| Component | Purpose | Repository |
-|-----------|---------|------------|
-| **VoxCore** | Core transcription engine | [cliffmin/voxcore](https://github.com/cliffmin/voxcore) |
-| **VoxCompose** | ML transcript refinement (optional) | [cliffmin/voxcompose](https://github.com/cliffmin/voxcompose) |
-| **homebrew-tap** | Distribution via Homebrew | This repo |
+| Component | Purpose | Repository | Documentation |
+|-----------|---------|------------|---------------|
+| **VoxCore** | Core transcription engine | [cliffmin/voxcore](https://github.com/cliffmin/voxcore) | [Setup](https://github.com/cliffmin/voxcore/tree/main/docs/setup) · [Architecture](https://github.com/cliffmin/voxcore/blob/main/docs/development/architecture.md) · [Performance](https://github.com/cliffmin/voxcore/blob/main/docs/performance.md) |
+| **VoxCompose** | ML transcript refinement (optional) | [cliffmin/voxcompose](https://github.com/cliffmin/voxcompose) | [Integration](https://github.com/cliffmin/voxcompose/blob/main/docs/voxcore-integration.md) · [Architecture](https://github.com/cliffmin/voxcompose/blob/main/docs/architecture.md) |
+| **homebrew-tap** | Distribution via Homebrew | This repo | — |
 
 ## Troubleshooting
 
